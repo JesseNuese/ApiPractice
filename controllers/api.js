@@ -1,31 +1,32 @@
 var endpoint = 'http://kanyerest.xyz/api';
-var request = requires('request');
+var request = require('request');
 
 module.exports = {
         counter: (req, res) => {
-            request('$(endpoint)/counter', (err, response, body) => {
+            request(`${endpoint}/counter`, (err, response, body) => {
                 res.send({
                     error: err,
                     response: response,
-                    body;body
+                    body:body,
                 });
             });
         },
         album: (req, res) => {
-            request('$(endpoint)/album/$(req.query.album)', (err, response, body) => {
+            request(`${endpoint}/album/${req.query.album}`, (err, response, body) => {
                 res.send({
                     error: err,
                     response: response,
-                    body;body,
+                    body:body,
                 });
             })
         },
         track: function getTrack(req, res) {
-            request('$(endpoint)/track/$(req.query.track)', (err, response, body) => {
+            request(`${endpoint}/track/${req.query.track}`, (err, response, body) => {
                 res.send({
                     error: err,
                     response: response,
-                    body;body,
+                    body:body,
                 });
-            })
+            });
         }
+      }

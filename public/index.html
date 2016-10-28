@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="MrWest">
+  <head>
+    <meta charset="utf-8">
+    <title>API Practice</title>
+    <script src='main.js'></script>
+    <script src='https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js'></script>
+  </head>
+  <body ng-controller="kCheddah as kCtrl">
+    <h1> {{kanye.greeting}} </h1>
+
+    <ul>
+      <!-- <li ng-repeat='(key, value) in kanye.counter.body track by index'>
+        {{key}}: {{value}}
+      </li> -->
+
+      <li ng-repeat='word in kanye.arr | orderBy:'-count''>
+        {{word.word}}: {{word.count}}
+
+    </ul>
+  </body>
+</html>

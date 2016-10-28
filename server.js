@@ -1,5 +1,5 @@
 var express = require('express');
-var morgan = require('morgan')('dev');
+var logger = require('morgan')('dev');
 var request = require('request');
 var routes = require('./routes.js')
 
@@ -7,9 +7,9 @@ var PORT = process.env.PORT || 1337;
 
 var app = express();
 
-app.use('logger');
+app.use(logger);
 
-Routes(app);
+routes(app);
 
 app.listen(PORT, (error) => {
   if(error){
